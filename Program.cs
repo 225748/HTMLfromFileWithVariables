@@ -27,11 +27,9 @@ namespace HTMLfromFileWithVariables
 
             string htmlBody = emailManager.ReadAndPopulateEmailTemplate(templateFilePath,variableReplacements);
 
-            emailManager.SendEmail("benjaminjfranklin99@gmail.com", htmlBody, "Test Email");
+            emailManager.SendEmail("benjaminjfranklin99@gmail.com", htmlBody, "Test");
             //improvement from old style is that the credentials file location no longer needs to be passed into this function with every call
             //the file location is now stored in the email manager class itself
-            Console.ReadLine();
-
 
 
         }
