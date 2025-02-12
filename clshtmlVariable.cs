@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace HTMLfromFileWithVariables
 {
-    internal class Program
+    internal class clshtmlVariable
     {
-        static void Main(string[] args)
-        {
-
-            Console.ReadLine();
-
-
-
-        }
+        public string fileIdentifier { get ; set; }
+        public string variableValue { get; set; }
     }
 }
