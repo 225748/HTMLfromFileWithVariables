@@ -11,14 +11,22 @@ namespace HTMLfromFileWithVariables
     {
         static void Main(string[] args)
         {
-            int adult = 2;
             StreamReader htmlFile = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "/HTMLBookingConfirmation.html");
             //To check file path - it should find this projects debug folder and then go to the file specified
             //Console.WriteLine((AppDomain.CurrentDomain.BaseDirectory + "/HTMLBookingConfirmation.html").ToString());
             //Console.ReadLine();
-            string html = htmlFile.ReadToEnd();
-            Console.WriteLine(html);
+
+            string currentLine;
+            StreamReader currentFile = new StreamReader(AppDomain.CurrentDomain.BaseDirectory + "/FILENAME");
+            while (!currentFile.EndOfStream)
+            {
+                currentLine = currentFile.ReadLine();
+                Console.WriteLine(currentLine);
+            }
+            currentFile.Close();
             Console.ReadLine();
+
+
 
         }
     }
