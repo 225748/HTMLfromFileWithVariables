@@ -13,9 +13,9 @@ namespace HTMLfromFileWithVariables
         {
             clsEmailManager emailManager = new clsEmailManager();
             string templateFilePath = (AppDomain.CurrentDomain.BaseDirectory + "/simple.html");
+
             //Make an array of variables to replace
             clshtmlVariable[] variableReplacement = new clshtmlVariable[2];//num of unique variables in html template
-
             clshtmlVariable htmlVariable;
 
             //for every unique var in the template do this
