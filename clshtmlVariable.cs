@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace HTMLfromFileWithVariables
 {
-    internal class clshtmlVariable
+    public class clshtmlVariable
     {
-        public string fileIdentifier { get ; set; }
-        public string variableValue { get; set; }
+        public string FileIdentifier { get ; set; }
+        public string VariableValue { get; set; }
+
+        public clshtmlVariable(string fileIdentifier, string variableValue)
+        {
+            FileIdentifier = fileIdentifier;
+            VariableValue = variableValue;
+        }
     }
 }
