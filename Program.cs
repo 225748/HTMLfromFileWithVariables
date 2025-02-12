@@ -12,21 +12,24 @@ namespace HTMLfromFileWithVariables
         static void Main(string[] args)
         {
             clsEmailManager emailManager = new clsEmailManager();
-            string templateFilePath = (AppDomain.CurrentDomain.BaseDirectory + "/simple.html");
+            string templateFilePath = (AppDomain.CurrentDomain.BaseDirectory + "/simple.html");//directs to its own debug folder and then the file
 
-            //Make an array of variables to replace
-            clshtmlVariable[] variableReplacement = new clshtmlVariable[2];//num of unique variables in html template
+            //Make an array of variables to replace in the html template
+            clshtmlVariable[] variableReplacements = new clshtmlVariable[2];//num of unique variables in html template
             clshtmlVariable htmlVariable;
 
-            //for every unique var in the template do this
+            //for every unique variable in the template do this
             htmlVariable = new clshtmlVariable("{x}","12");
-            variableReplacement[0] = htmlVariable;
+            variableReplacements[0] = htmlVariable;
 
             htmlVariable = new clshtmlVariable("{y}", "43");
-            variableReplacement[1] = htmlVariable;
+            variableReplacements[1] = htmlVariable;
 
-            string htmlBody = emailManager.ReadAndPopulateEmailTemplate(templateFilePath,variableReplacement);
+            string htmlBody = emailManager.ReadAndPopulateEmailTemplate(templateFilePath,variableReplacements);
+
             emailManager.SendEmail("benjaminjfranklin99@gmail.com", htmlBody, "Test Email");
+            //improvement from old style is that the credentials file location no longer needs to be passed into this function with every call
+            //the file location is now stored in the email manager class itself
             Console.ReadLine();
 
 

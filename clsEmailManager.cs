@@ -18,8 +18,7 @@ namespace HTMLfromFileWithVariables
 {
     internal class clsEmailManager
     {
-        private string CredentialsFileLocation = (AppDomain.CurrentDomain.BaseDirectory + "/credentials.json");
-
+        private string CredentialsFileLocation = (AppDomain.CurrentDomain.BaseDirectory + "/credentials.json");//directs itself to its own debug folder and then the file
 
         public string ReadAndPopulateEmailTemplate(string filePath, clshtmlVariable[] variableReplacement)
         {
