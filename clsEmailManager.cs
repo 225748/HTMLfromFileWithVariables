@@ -57,18 +57,20 @@ namespace HTMLfromFileWithVariables
             }
 
             UserCredential credential;
-            //read your credentials file
+            //read credentials file
             using (FileStream stream = new FileStream(CredentialsFileLocation, FileMode.Open, FileAccess.Read))
             {
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                 path = Path.Combine(path, ".credentials/gmail-dotnet-quickstart.json");
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets, Scopes, "user", CancellationToken.None, new FileDataStore(path, true)).Result;
             }
+
             //compile the email
             string Message = $"To:{addressTo}" +
                 $"\r\nCC:{cc}" +
                 $"\r\nBcc:{bcc}" +
                 $"\r\nSubject:{subject}" +
+                $"\r\nFrom: RotaConnect" +
                 $"\r\nContent-Type: text/html;charset=utf-8\r\n" +
                 $"\r\n<body>{body}</body>";
 
